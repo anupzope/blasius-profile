@@ -14,10 +14,11 @@ bool isOption(char const * optionName, char const * arg) {
   return false;
 }
 
-bool getOption(char const * optionName, char const * arg, char const * value) {
+bool getOption(char const * optionName, char const * arg, char const * * value) {
   size_t const len = std::strlen(optionName);
   if(std::strncmp(optionName, arg, len) == 0) {
-    value = &arg[len];
+    *value = &arg[len];
+    std::cout << "outValue = " << *value << std::endl;
     return true;
   }
   return false;
@@ -69,12 +70,12 @@ int main(int argc, char * argv[]) {
     } else if(getOption("a1=", argv[i], a1)) {
     } else if(getOption("a2=", argv[i], a2)) {
     } else if(getOption("a3=", argv[i], a3)) {
-    } else if(getOption("minEta", argv[i], minEta)) {
-    } else if(getOption("maxEta", argv[i], maxEta)) {
-    } else if(getOption("N", argv[i], N)) {
-    } else if(getOption("h0", argv[i], h0)) {
-    } else if(getOption("h1", argv[i], h1)) {
-    } else if(getOption("out", argv[i], outFile)) {
+    } else if(getOption("minEta=", argv[i], minEta)) {
+    } else if(getOption("maxEta=", argv[i], maxEta)) {
+    } else if(getOption("N=", argv[i], N)) {
+    } else if(getOption("h0=", argv[i], h0)) {
+    } else if(getOption("h1=", argv[i], h1)) {
+    } else if(getOption("out=", argv[i], &outFile)) {
     } else if(isOption("-help", argv[i])) {
       std::cout << "Usage: " << argv[0]
         << " [pInf] [tInf] [mInf] [gamma] [R] [a1] [a2] [a3] [x]"
@@ -155,6 +156,7 @@ int main(int argc, char * argv[]) {
   }
   
   std::ofstream file(outFile);
+  file.precision(15);
   for(int i = 0; i < N; ++i) {
     file << x << " " << y[i] << " " << u[i] << " " << v[i] << " " << pInf << " " << tInf << std::endl;
   }
