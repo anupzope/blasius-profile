@@ -1,99 +1,104 @@
 #!/bin/bash
 
-P=941.9152276295132
-T=6.075506051110518
-M=2.0
-X=258.6
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l100.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l100.dat > case4-set2-bl0.00468-l100-bc.dat
+declare -A P
+declare -A T
+declare -A M
+declare -A X
 
-P=1883.8304552590264
-T=12.151012102221037
-M=2.0
-X=136.0
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l200.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l200.dat > case4-set2-bl0.00468-l200-bc.dat
+P[100]=941.9152276295132
+T[100]=6.075506051110518
+M[100]=2.0
 
-P=2825.7456828885397
-T=18.226518153331558
-M=2.0
-X=95.16
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l300.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l300.dat > case4-set2-bl0.00468-l300-bc.dat
+P[200]=1883.8304552590264
+T[200]=12.151012102221037
+M[200]=2.0
 
-P=3767.660910518053
-T=24.302024204442073
-M=2.0
-X=74.74
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l400.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l400.dat > case4-set2-bl0.00468-l400-bc.dat
+P[300]=2825.7456828885397
+T[300]=18.226518153331558
+M[300]=2.0
 
-P=4709.576138147567
-T=30.377530255552596
-M=2.0
-X=62.5
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l500.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l500.dat > case4-set2-bl0.00468-l500-bc.dat
+P[400]=3767.660910518053
+T[400]=24.302024204442073
+M[400]=2.0
 
-P=5651.491365777079
-T=36.453036306663115
-M=2.0
-X=54.322
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l600.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l600.dat > case4-set2-bl0.00468-l600-bc.dat
+P[500]=4709.576138147567
+T[500]=30.377530255552596
+M[500]=2.0
 
-P=6593.406593406593
-T=42.52854235777363
-M=2.0
-X=48.49
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l700.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l700.dat > case4-set2-bl0.00468-l700-bc.dat
+P[600]=5651.491365777079
+T[600]=36.453036306663115
+M[600]=2.0
 
-P=7535.321821036106
-T=48.60404840888415
-M=2.0
-X=44.112
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l800.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l800.dat > case4-set2-bl0.00468-l800-bc.dat
+P[700]=6593.406593406593
+T[700]=42.52854235777363
+M[700]=2.0
 
-P=8477.23704866562
-T=54.67955445999468
-M=2.0
-X=40.708
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l900.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l900.dat > case4-set2-bl0.00468-l900-bc.dat
+P[800]=7535.321821036106
+T[800]=48.60404840888415
+M[800]=2.0
 
-P=9419.152276295134
-T=60.75506051110519
-M=2.0
-X=37.9871
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l1000.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l1000.dat > case4-set2-bl0.00468-l1000-bc.dat
+P[900]=8477.23704866562
+T[900]=54.67955445999468
+M[900]=2.0
 
-P=10361.067503924645
-T=66.83056656221571
-M=2.0
-X=35.759
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l1100.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l1100.dat > case4-set2-bl0.00468-l1100-bc.dat
+P[1000]=9419.152276295134
+T[1000]=60.75506051110519
+M[1000]=2.0
 
-P=11302.982731554159
-T=72.90607261332623
-M=2.0
-X=33.902
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l1200.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l1200.dat > case4-set2-bl0.00468-l1200-bc.dat
+P[1100]=10361.067503924645
+T[1100]=66.83056656221571
+M[1100]=2.0
 
-P=14128.728414442698
-T=91.13259076665777
-M=2.0
-X=29.819
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l1500.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l1500.dat > case4-set2-bl0.00468-l1500-bc.dat
+P[1200]=11302.982731554159
+T[1200]=72.90607261332623
+M[1200]=2.0
 
-P=16954.47409733124
-T=109.35910891998935
-M=2.0
-X=27.097
-./blasius-velocity-profile pInf=$P tInf=$T mInf=$M x=$X out=case4-set2-bl0.00468-l1800.dat
-awk -f generate-prescribed-case4-set2-bc.awk case4-set2-bl0.00468-l1800.dat > case4-set2-bl0.00468-l1800-bc.dat
+P[1500]=14128.728414442698
+T[1500]=91.13259076665777
+M[1500]=2.0
+
+P[1800]=16954.47409733124
+T[1800]=109.35910891998935
+M[1800]=2.0
+
+# bl thockness 0.01
+X[100]=1180.25
+X[200]=620.91
+X[300]=434.46
+X[400]=341.235
+X[500]=285.3
+X[600]=248.012
+X[700]=221.376
+X[800]=201.4
+X[900]=185.863
+X[1000]=173.433
+X[1100]=163.263
+X[1200]=154.788
+X[1500]=136.143
+X[1800]=123.713
+
+for i in 100 200 300 400 500 600 700 800 900 1000 1100 1200 1500 1800
+do
+  ./blasius-velocity-profile pInf=${P[$i]} tInf=${T[$i]} mInf=${M[$i]} x=${X[$i]} out=case8-bl0.01-l$i.dat
+done
+
+# bl thockness 0.0468
+X[100]=258.6
+X[200]=136.0
+X[300]=95.16
+X[400]=74.74
+X[500]=62.5
+X[600]=54.322
+X[700]=48.49
+X[800]=44.112
+X[900]=40.708
+X[1000]=37.9871
+X[1100]=35.759
+X[1200]=33.902
+X[1500]=29.819
+X[1800]=27.097
+
+for i in 100 200 300 400 500 600 700 800 900 1000 1100 1200 1500 1800
+do
+  ./blasius-velocity-profile pInf=${P[$i]} tInf=${T[$i]} mInf=${M[$i]} x=${X[$i]} out=case8-bl0.00468-l$i.dat
+done
